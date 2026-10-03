@@ -15,6 +15,10 @@ local.properties
 *.aab
 *.ap_
 
+# Security & Keystores (NEVER commit keys)
+*.jks
+*.keystore
+
 # Files for the ART/Dalvik VM
 *.dex
 
@@ -31,4 +35,6 @@ build/
 # Temporary / Scratch artifacts
 icon_render.html
 generate_icons.ps1
+render_banner.ps1
+feature_graphic.html
 icon_512.png
