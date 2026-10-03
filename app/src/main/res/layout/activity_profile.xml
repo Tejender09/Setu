@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootProfileLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen_pearl"
+    android:fitsSystemWindows="true">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="24dp">
+
+            <!-- Header Navigation Bar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_circle_icon_button"
+                    android:src="@drawable/ic_chevron_left"
+                    app:tint="@color/slate_600"
+                    android:contentDescription="Go back" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <!-- Setu Brand Pill -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_pill_beamshare"
+                    android:paddingHorizontal="12dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_setu_mark"
+                        android:layout_marginEnd="6dp"
+                        android:contentDescription="Setu Logo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SETU"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.14"
+                        android:textColor="@color/slate_800" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/btnPreview"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_circle_icon_button"
+                    android:src="@drawable/ic_eye_preview"
+                    app:tint="@color/slate_600"
+                    android:contentDescription="Preview card" />
+            </LinearLayout>
+
+            <!-- Title & Refined Profile Avatar Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="12dp"
+                android:paddingHorizontal="4dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Setup Your Card"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/slate_900"
+                        android:letterSpacing="-0.02" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shared instantly when phones touch"
+                        android:textSize="12.5sp"
+                        android:textColor="@color/slate_500"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <!-- Luminous Frosted Avatar with Camera Edit Badge -->
+                <FrameLayout
+                    android:id="@+id/layoutAvatarPicker"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_avatar_glow_ring" />
+
+                    <FrameLayout
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_avatar_circle">
+
+                        <TextView
+                            android:id="@+id/tvProfileAvatarIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="👤"
+                            android:textSize="26sp"
+                            android:gravity="center" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivProfileAvatarPreview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:visibility="gone"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                    </FrameLayout>
+
+                    <!-- Edit Badge with '+' Icon -->
+                    <ImageView
+                        android:id="@+id/btnChangeAvatarPhoto"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="bottom|end"
+                        android:background="@drawable/bg_avatar_badge_camera"
+                        android:src="@drawable/ic_plus_small"
+                        android:padding="2.5dp"
+                        app:tint="@color/surface"
+                        android:contentDescription="Change photo" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- Vertically Stacked Clean Form Container (Pearl Glass Card) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="14dp"
+                android:padding="16dp"
+                android:background="@drawable/bg_pearl_glass_card"
+                android:elevation="2dp">
+
+                <!-- Field 1: Full Name -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="10dp"
+                    android:background="@drawable/bg_glass_input">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FULL NAME *"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/slate_400"
+                        android:letterSpacing="0.08" />
+
+                    <EditText
+                        android:id="@+id/etName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="Full Name"
+                        android:textColorHint="@color/slate_400"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/slate_800"
+                        android:inputType="textPersonName|textCapWords"
+                        android:imeOptions="actionNext"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="2dp" />
+                </LinearLayout>
+
+                <!-- Field 2: Phone Number -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="10dp"
+                    android:background="@drawable/bg_glass_input">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PHONE NUMBER *"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/slate_400"
+                        android:letterSpacing="0.08" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="3dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🇮🇳 +91"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/slate_600"
+                            android:paddingEnd="8dp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="16dp"
+                            android:background="@color/slate_200"
+                            android:layout_marginEnd="8dp" />
+
+                        <EditText
+                            android:id="@+id/etPhone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:hint="Mobile number"
+                            android:textColorHint="@color/slate_400"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/slate_800"
+                            android:inputType="phone"
+                            android:imeOptions="actionNext"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="2dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Field 3: Title / Headline -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="10dp"
+                    android:background="@drawable/bg_glass_input">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TITLE / HEADLINE"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/slate_400"
+                        android:letterSpacing="0.08" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="3dp">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_briefcase"
+                            app:tint="@color/slate_400"
+                            android:layout_marginEnd="8dp"
+                            android:contentDescription="Headline" />
+
+                        <EditText
+                            android:id="@+id/etNote"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:hint="e.g. Software Engineer"
+                            android:textColorHint="@color/slate_400"
+                            android:textSize="14.5sp"
+                            android:textColor="@color/slate_800"
+                            android:inputType="textCapSentences"
+                            android:imeOptions="actionNext"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="2dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Field 4: Email Address -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="10dp"
+                    android:background="@drawable/bg_glass_input">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="EMAIL ADDRESS"
+                            android:textSize="10.5sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/slate_400"
+                            android:letterSpacing="0.08" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Optional"
+                            android:textSize="10sp"
+                            android:textColor="@color/slate_400" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="3dp">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_email_envelope"
+                            app:tint="@color/slate_400"
+                            android:layout_marginEnd="8dp"
+                            android:contentDescription="Email" />
+
+                        <EditText
+                            android:id="@+id/etEmail"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:hint="email@example.com"
+                            android:textColorHint="@color/slate_400"
+                            android:textSize="14.5sp"
+                            android:textColor="@color/slate_800"
+                            android:inputType="textEmailAddress"
+                            android:imeOptions="actionNext"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="2dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Field 5: Instagram Direct Handle -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="10dp"
+                    android:background="@drawable/bg_glass_input">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="INSTAGRAM HANDLE"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/slate_400"
+                        android:letterSpacing="0.08" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="3dp">
+
+                        <FrameLayout
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/bg_instagram_square_badge"
+                            android:layout_marginEnd="8dp">
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_instagram_glyph"
+                                app:tint="@color/surface"
+                                android:contentDescription="Instagram" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/slate_400"
+                            android:layout_marginEnd="3dp" />
+
+                        <EditText
+                            android:id="@+id/etInstagram"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:hint="username"
+                            android:textColorHint="@color/slate_400"
+                            android:textSize="14.5sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/slate_800"
+                            android:inputType="textNoSuggestions"
+                            android:imeOptions="actionNext"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="2dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Field 6: LinkedIn / Website Quick Row (2 Columns) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <!-- LinkedIn Column -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="9dp"
+                        android:background="@drawable/bg_glass_input"
+                        android:layout_marginEnd="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="LINKEDIN"
+                            android:textSize="9.5sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/slate_400"
+                            android:letterSpacing="0.08" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="3dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_linkedin_glyph"
+                                android:layout_marginEnd="5dp"
+                                android:contentDescription="LinkedIn" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="in/"
+                                android:textSize="11.5sp"
+                                android:textColor="@color/slate_400"
+                                android:layout_marginEnd="2dp" />
+
+                            <EditText
+                                android:id="@+id/etLinkedIn"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:hint="username"
+                                android:textColorHint="@color/slate_400"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/slate_800"
+                                android:inputType="textNoSuggestions"
+                                android:imeOptions="actionNext"
+                                android:paddingTop="2dp"
+                                android:paddingBottom="2dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Portfolio / Website Column -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="9dp"
+                        android:background="@drawable/bg_glass_input"
+                        android:layout_marginStart="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PORTFOLIO"
+                            android:textSize="9.5sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/slate_400"
+                            android:letterSpacing="0.08" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="3dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_link_chain"
+                                app:tint="@color/slate_400"
+                                android:layout_marginEnd="5dp"
+                                android:contentDescription="Portfolio" />
+
+                            <EditText
+                                android:id="@+id/etWebsite"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:hint="link.com"
+                                android:textColorHint="@color/slate_400"
+                                android:textSize="13sp"
+                                android:textColor="@color/slate_800"
+                                android:inputType="textUri"
+                                android:imeOptions="actionDone"
+                                android:paddingTop="2dp"
+                                android:paddingBottom="2dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Flexible Space Filler (Absorbs tall screen height so action buttons sit nicely at the bottom) -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="24dp" />
+
+            <!-- Action Controls Footer -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="8dp">
+
+                <!-- Primary CTA Button (Gradient background with app:backgroundTint="@null") -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:text="SAVE &amp; GO TO SHARE SCREEN"
+                    android:textColor="@color/surface"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08"
+                    app:icon="@drawable/ic_arrow_forward"
+                    app:iconGravity="textEnd"
+                    app:iconPadding="10dp"
+                    app:iconTint="@color/surface"
+                    android:background="@drawable/bg_btn_primary_gradient"
+                    app:backgroundTint="@null"
+                    app:cornerRadius="16dp"
+                    android:elevation="4dp" />
+
+                <!-- Secondary Action: View Exchange History (Clean White Card with Indigo Stroke & Text) -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnViewHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:text="VIEW EXCHANGE HISTORY"
+                    android:textColor="@color/primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.06"
+                    app:icon="@drawable/ic_history_doc"
+                    app:iconTint="@color/primary"
+                    app:iconGravity="textStart"
+                    app:iconPadding="10dp"
+                    android:background="@drawable/bg_btn_view_history"
+                    app:backgroundTint="@null"
+                    app:cornerRadius="16dp"
+                    android:elevation="1dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

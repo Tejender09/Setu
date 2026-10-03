@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+
+    <!-- Echo Rings -->
+    <path
+        android:pathData="M 256,191 a 44,44 0 1,0 0.001,0 Z"
+        android:strokeColor="#8B5CF6"
+        android:strokeWidth="2.5"
+        android:strokeAlpha="0.6" />
+
+    <!-- Central Horizon Data Beam (Opacity 0.25) -->
+    <path
+        android:pathData="M 140,235 L 372,235"
+        android:strokeColor="#6366F1"
+        android:strokeWidth="8"
+        android:strokeAlpha="0.25"
+        android:strokeLineCap="round" />
+
+    <!-- Central Data Beam Core -->
+    <path
+        android:pathData="M 205,235 L 307,235"
+        android:strokeColor="#6366F1"
+        android:strokeWidth="8"
+        android:strokeLineCap="round" />
+
+    <!-- Upper Arch Bridge (Setu) -->
+    <path
+        android:pathData="M 170,235 C 170,160 210,145 256,145 C 302,145 342,160 342,235"
+        android:strokeWidth="18"
+        android:strokeLineCap="round">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:startX="170"
+                android:startY="235"
+                android:endX="342"
+                android:endY="235"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#4F46E5" />
+                <item android:offset="1.0" android:color="#6366F1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Inverted Foundation Arch Bridge (Setu) -->
+    <path
+        android:pathData="M 170,235 C 170,310 210,325 256,325 C 302,325 342,310 342,235"
+        android:strokeWidth="18"
+        android:strokeLineCap="round">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:startX="170"
+                android:startY="235"
+                android:endX="342"
+                android:endY="235"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#8B5CF6" />
+                <item android:offset="1.0" android:color="#A855F7" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Instant Tap Node (Outer White) -->
+    <path
+        android:pathData="M 256,219 a 16,16 0 1,0 0.001,0 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Instant Tap Node (Inner Indigo) -->
+    <path
+        android:pathData="M 256,226 a 9,9 0 1,0 0.001,0 Z"
+        android:fillColor="#6366F1" />
+
+    <!-- Instant Tap Node (Center Core) -->
+    <path
+        android:pathData="M 256,231.5 a 3.5,3.5 0 1,0 0.001,0 Z"
+        android:fillColor="#FFFFFF" />
+
+</vector>

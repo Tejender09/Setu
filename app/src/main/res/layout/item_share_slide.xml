@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+    <!-- Concentric Animated Radar Wave Rings (Unclipped, Compact & Centered) -->
+    <FrameLayout
+        android:id="@+id/layoutRadarRings"
+        android:layout_width="260dp"
+        android:layout_height="214dp"
+        android:layout_gravity="center_horizontal"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <!-- Ripple Wave 1 (Outer Indigo) -->
+        <View
+            android:id="@+id/viewRadarOuter"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_radar_ring_outer" />
+
+        <!-- Ripple Wave 2 (Middle Violet) -->
+        <View
+            android:id="@+id/viewRadarMiddle"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_radar_ring_mid" />
+
+        <!-- Ripple Wave 3 (Inner Rose) -->
+        <View
+            android:id="@+id/viewRadarInner"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_radar_ring_inner" />
+
+        <!-- Central Floating Beacon / Transmitter Hub (Frosted Orb) -->
+        <FrameLayout
+            android:id="@+id/layoutBeaconOrb"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_beacon_orb_instagram"
+            android:padding="3dp"
+            android:elevation="6dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_beacon_inner_white">
+
+                <!-- Platform Icon / Glyph -->
+                <ImageView
+                    android:id="@+id/ivBeaconGlyph"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_instagram_glyph"
+                    android:contentDescription="Beacon Glyph" />
+
+                <!-- Sparkle Star Accent -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="4dp"
+                    android:text="✨"
+                    android:textSize="13sp" />
+            </FrameLayout>
+        </FrameLayout>
+    </FrameLayout>
+
+    <!-- Dynamic Broadcasting Status Capsule -->
+    <LinearLayout
+        android:id="@+id/layoutBroadcastCapsule"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp"
+        android:paddingHorizontal="14dp"
+        android:background="@drawable/bg_capsule_broadcast_instagram"
+        android:elevation="2dp">
+
+        <View
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:background="@drawable/bg_dot_white"
+            android:layout_marginEnd="8dp" />
+
+        <ImageView
+            android:id="@+id/ivBroadcastCapsuleIcon"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/ic_instagram_glyph"
+            android:layout_marginEnd="6dp"
+            android:contentDescription="Broadcast icon" />
+
+        <TextView
+            android:id="@+id/tvTargetBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Broadcasting: Instagram (@cameracurv)"
+            android:textSize="11.5sp"
+            android:textStyle="bold"
+            android:textColor="@color/surface" />
+    </LinearLayout>
+
+    <!-- Instruction Headline inside slide (Properly spaced, will never collide with indicators) -->
+    <TextView
+        android:id="@+id/tvSlidePrompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Touch phones to open your profile directly in their Instagram app!"
+        android:textSize="13.5sp"
+        android:textStyle="bold"
+        android:textColor="@color/slate_900"
+        android:gravity="center"
+        android:paddingHorizontal="18dp"
+        android:lineSpacingExtra="1dp" />
+
+</LinearLayout>

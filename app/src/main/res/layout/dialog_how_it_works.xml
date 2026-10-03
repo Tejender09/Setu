@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_dialog_rounded"
+    android:padding="20dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="14dp">
+
+        <FrameLayout
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_pro_pill">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_info_circle"
+                app:tint="@color/primary"
+                android:contentDescription="Info" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:text="How Tap Sharing Works"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/slate_900" />
+
+        <ImageButton
+            android:id="@+id/btnCloseHowItWorks"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_circle_icon_button"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            app:tint="@color/slate_500"
+            android:contentDescription="Close" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/slate_200"
+        android:layout_marginBottom="14dp" />
+
+    <!-- Step 1 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="14dp">
+
+        <TextView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/bg_pro_pill"
+            android:text="1"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No App Required"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:textColor="@color/slate_800" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The recipient doesn't need to install any app or account to receive your profile."
+                android:textSize="12sp"
+                android:textColor="@color/slate_500"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Step 2 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="14dp">
+
+        <TextView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/bg_badge_instagram"
+            android:text="2"
+            android:textColor="@color/instagram_pink"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instant In-App Redirect"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:textColor="@color/slate_800" />
+
+            <TextView
+                android:id="@+id/tvHowItWorksStep2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Automatically pops up a prompt opening your profile directly in their app."
+                android:textSize="12sp"
+                android:textColor="@color/slate_500"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Step 3 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="18dp">
+
+        <TextView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/bg_pro_pill"
+            android:text="3"
+            android:textColor="@color/warning"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Proximity Touch (0–2 cm)"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:textColor="@color/slate_800" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hold the top of either phone against the other gently for secure NFC transmission."
+                android:textSize="12sp"
+                android:textColor="@color/slate_500"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Got it Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGotIt"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Got It"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textAllCaps="true"
+        android:textColor="@color/surface"
+        app:backgroundTint="@color/primary"
+        app:cornerRadius="14dp" />
+
+</LinearLayout>

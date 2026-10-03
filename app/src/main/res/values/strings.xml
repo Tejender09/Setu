@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Setu</string>
+    <string name="nfc_card_service_desc">Setu Profile Sharing</string>
+    <string name="nfc_aid_desc">Setu Tap Card</string>
+</resources>
