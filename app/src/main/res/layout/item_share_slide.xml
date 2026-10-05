@@ -123,12 +123,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Touch phones to open your profile directly in their Instagram app!"
-        android:textSize="13.5sp"
+        android:text="Touch phones to open Instagram profile"
+        android:textSize="14.5sp"
         android:textStyle="bold"
         android:textColor="@color/slate_900"
         android:gravity="center"
-        android:paddingHorizontal="18dp"
-        android:lineSpacingExtra="1dp" />
+        android:paddingHorizontal="16dp" />
 
 </LinearLayout>

@@ -47,7 +47,7 @@ class ShareSlideAdapter(
                 beaconOrbBgRes = R.drawable.bg_beacon_orb_instagram,
                 capsuleBgRes = R.drawable.bg_capsule_broadcast_instagram,
                 badgeText = "Broadcasting: Instagram ($igLabel)",
-                promptText = "Touch phones to open your profile\ndirectly in their Instagram app!"
+                promptText = "Touch phones to open Instagram profile"
             )
         )
 
@@ -63,7 +63,7 @@ class ShareSlideAdapter(
                 beaconOrbBgRes = R.drawable.bg_beacon_orb_linkedin,
                 capsuleBgRes = R.drawable.bg_capsule_broadcast_linkedin,
                 badgeText = "Broadcasting: LinkedIn ($liLabel)",
-                promptText = "Touch phones to open your profile\ndirectly in their LinkedIn app!"
+                promptText = "Touch phones to open LinkedIn profile"
             )
         )
 
@@ -77,7 +77,7 @@ class ShareSlideAdapter(
                 beaconOrbBgRes = R.drawable.bg_beacon_orb_whatsapp,
                 capsuleBgRes = R.drawable.bg_capsule_broadcast_whatsapp,
                 badgeText = "Broadcasting: WhatsApp (${myCard.phone})",
-                promptText = "Touch phones to open a direct\nWhatsApp chat with you!"
+                promptText = "Touch phones to start WhatsApp chat"
             )
         )
 
@@ -91,7 +91,7 @@ class ShareSlideAdapter(
                 beaconOrbBgRes = R.drawable.bg_beacon_orb_contact,
                 capsuleBgRes = R.drawable.bg_capsule_broadcast_contact,
                 badgeText = "Broadcasting: Contact Card (vCard)",
-                promptText = "Touch phones back-to-back to share!\n(Works with ANY phone — Zero App Needed)"
+                promptText = "Touch phones to save contact card"
             )
         )
 
@@ -106,7 +106,7 @@ class ShareSlideAdapter(
                 beaconOrbBgRes = R.drawable.bg_beacon_orb_linkedin,
                 capsuleBgRes = R.drawable.bg_capsule_broadcast_linkedin,
                 badgeText = "Broadcasting: Website ($site)",
-                promptText = "Touch phones to open\nyour website directly!"
+                promptText = "Touch phones to open website"
             )
         )
 
